@@ -1,0 +1,39 @@
+{% extends 'inner-page.html' %}
+{% block content %}
+
+  <!-- ======= Hero Section ======= -->
+  <section class="d-flex flex-column justify-content-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-8">
+            <form class="form" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+        
+                <button type="submint" id="submint">Registrarse</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+
+
+<!--
+<div id="hero" class="d-flex flex-column justify-content-center">
+    <div class="conteiner">
+        <div class="row justify-content-center">
+            <div class="col-xl-8">
+                <form class="form" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+            
+                    <button type="submint" id="submint">Registrarse</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+
+{% endblock %}
