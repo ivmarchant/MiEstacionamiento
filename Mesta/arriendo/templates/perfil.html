@@ -1,23 +1,25 @@
-{% extends 'inner-page.html' %}
-{% load humanize %}
+{% extends 'estacionamiento/estacionamientos.html' %}
 {% block content %}
 
 <div class="container">
     <div class="row">
-        {% for estacionamiento in estacionamientos %}
             <div class="col-md-4">
                 <div class="card mb-4">
-                    <img class="card-img-top" src="{{ estacionamiento.user.perfil.image.url }}" alt="Card image">
+                    <img class="card-img-top" src="{{ user.perfil.image.url }}" alt="Card image">
                     <div class="card-body">
-                        <h4 class="card-title">#{{ estacionamiento.user.username }}</h4>
+                        <h4 class="card-title">#{{ user.username }}</h4>
                         <i class="clock"></i>
-                        <time data-time="#">{{ estacionamiento.timestamp|naturaltime }}</time>
-                        <div class="card-text">{{ estacionamiento.content }}</div>
                     </div>
                 </div>
             </div>
-            {% endfor %}
         </div>
+    <div>
+        <div>
+            <h5>Estacionamientos: {{ user.estacionamientos.count }}</h5>
+        </div>
+    </div>
 </div>
+
+{{ block.super }}
 
 {% endblock %}
